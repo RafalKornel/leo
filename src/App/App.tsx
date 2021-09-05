@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useMemo, useState } from "react";
-import { filterUsers } from "./filterUsers";
-import { Users } from "./Users";
-import { useUsers } from "./useUsers";
+import { filterUsers } from "../utils";
+import { Users } from "../Users";
+import { useUsers } from "../hooks";
 
 const useInput = () => {
   const [inputValue, setInputValue] = useState<string>("");

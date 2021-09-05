@@ -1,6 +1,15 @@
-import { UserDto } from "./user.dto";
+import { UserDto, UserModel } from "../models";
 
-export const createUser = (name: string, username?: string): UserDto => ({
+export const createUserModel = (
+  name: string,
+  username?: string
+): UserModel => ({
+  id: 1,
+  name,
+  username: username || name,
+});
+
+export const createUserDto = (name: string, username?: string): UserDto => ({
   id: 1,
   name,
   username: username || name,

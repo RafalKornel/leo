@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { UserDto } from "../user.dto";
+import { UserModel } from "../models";
+import { UserComponent, Name, Username } from "./User.style";
 
 type UsersProps = {
-  users: UserDto[];
+  users: UserModel[];
 };
 
 export const Users = ({ users }: UsersProps) => {
@@ -17,20 +17,3 @@ export const Users = ({ users }: UsersProps) => {
     </ol>
   );
 };
-
-const UserComponent = styled.li`
-  color: #aaa;
-
-  span {
-    margin: 0 5px;
-  }
-`;
-
-const Name = styled.span`
-  color: #000;
-  font-weight: bold;
-`;
-
-const Username = styled.span`
-  font-size: 14px;
-`;

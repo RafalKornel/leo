@@ -1,8 +1,11 @@
-import { User } from "./user.model";
+import { UserModel } from "../models";
 
-export function filterUsers(users: User[], searchPhrase: string): User[] {
+export function filterUsers(
+  users: UserModel[],
+  searchPhrase: string
+): UserModel[] {
   const filteredUsers = users.filter((user) => {
-    const usernameLowerCase = user.username.toLowerCase();
+    const usernameLowerCase = user.name.toLowerCase();
     const searchPhraseLowerCase = searchPhrase.toLowerCase();
 
     return usernameLowerCase.includes(searchPhraseLowerCase);

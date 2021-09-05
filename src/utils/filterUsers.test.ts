@@ -1,32 +1,8 @@
+import { createUserModel } from ".";
 import { filterUsers } from "./filterUsers";
-import { User } from "./user.model";
 
-const createUserWithUsername = (username: string): User => ({
-  id: 1,
-  name: "",
-  username,
-  email: "",
-  address: {
-    street: "",
-    suite: "",
-    city: "",
-    zipcode: "",
-    geo: {
-      lat: "",
-      lng: "",
-    },
-  },
-  phone: "",
-  website: "",
-  company: {
-    name: "",
-    catchPhrase: "",
-    bs: "",
-  },
-});
-
-const mockUserJohn = createUserWithUsername("john");
-const mockUserPaul = createUserWithUsername("paul");
+const mockUserJohn = createUserModel("john");
+const mockUserPaul = createUserModel("paul");
 
 const users = [mockUserJohn, mockUserPaul];
 
