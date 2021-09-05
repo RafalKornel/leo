@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useMemo, useState } from "react";
 import { filterUsers } from "./filterUsers";
-import { User } from "./user.model";
+import { Users } from "./Users";
 import { useUsers } from "./useUsers";
 
 const useInput = () => {
@@ -23,14 +23,6 @@ function App() {
     [searchValue, users]
   );
 
-  const renderUsers = (users: User[]) => (
-    <ul>
-      {users.map((user) => (
-        <li>{user.username}</li>
-      ))}
-    </ul>
-  );
-
   return (
     <div className="App">
       <input
@@ -39,7 +31,11 @@ function App() {
         onChange={handleInputChange}
         placeholder={"Search by user name..."}
       />
-      {isError ? `An error occoured: ${error}` : renderUsers(filteredUsers)}
+      {isError ? (
+        `An error occoured: ${error}`
+      ) : (
+        <Users users={filteredUsers} />
+      )}
     </div>
   );
 }
