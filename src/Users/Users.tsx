@@ -1,3 +1,5 @@
+import React from "react";
+
 import { UserModel } from "../models";
 import { UserComponent, Name, Username } from "./User.style";
 

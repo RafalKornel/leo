@@ -1,18 +1,9 @@
-import React, { ChangeEvent, useMemo, useState } from "react";
+import React, { useMemo } from "react";
+
 import { filterUsers } from "../utils";
 import { Users } from "../Users";
-import { useUsers } from "../hooks";
+import { useUsers, useInput } from "../hooks";
 import { AppWrapper, ContentWrapper } from "./App.style";
-
-const useInput = () => {
-  const [inputValue, setInputValue] = useState<string>("");
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-  };
-
-  return { inputValue, handleInputChange };
-};
 
 function App() {
   const { users, isError, isLoading, error } = useUsers();

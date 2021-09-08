@@ -1,5 +1,6 @@
-import { createUserModel } from "../utils";
 import { render, screen } from "@testing-library/react";
+
+import { createUserModel } from "../utils";
 import { Users } from "./Users";
 
 it("should render users", () => {

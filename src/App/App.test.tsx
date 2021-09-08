@@ -1,9 +1,10 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import App from ".";
 import { rest } from "msw";
-import { createUserDto } from "../utils";
 import { setupServer } from "msw/node";
+
+import App from ".";
+import { createUserDto } from "../utils";
 
 const fakeUsers = [
   createUserDto("test name", "nick1"),

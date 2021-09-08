@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import api from "../api/jsonPlaceholderApi";
+
+import api from "../api";
 import { UserDto } from "../models";
-import { UserModel } from "../models/user.model";
+import { UserModel } from "../models";
 
 /** Custom model mapping protects from problems due to dto models change */
 const mapDtoToUsers = (dtos: UserDto[]): UserModel[] => {

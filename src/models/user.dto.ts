@@ -3,13 +3,13 @@ export type UserDto = {
   name: string;
   username: string;
   email: string;
-  address: Address;
+  address: AddressDto;
   phone: string;
   website: string;
-  company: Company;
+  company: CompanyDto;
 };
 
-type Address = {
+type AddressDto = {
   street: string;
   suite: string;
   city: string;
@@ -20,7 +20,7 @@ type Address = {
   };
 };
 
-type Company = {
+type CompanyDto = {
   name: string;
   catchPhrase: string;
   bs: string;
