@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 400px;
-  margin: auto;
 
   h1 {
     text-align: center;
@@ -13,4 +12,8 @@ export const Wrapper = styled.div`
   input {
     height: 2em;
   }
+`;
+
+export const AppWrapper = styled.div`
+  margin: auto;
 `;

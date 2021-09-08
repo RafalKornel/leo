@@ -2,7 +2,7 @@ import React, { ChangeEvent, useMemo, useState } from "react";
 import { filterUsers } from "../utils";
 import { Users } from "../Users";
 import { useUsers } from "../hooks";
-import { Wrapper } from "./App.style";
+import { AppWrapper, ContentWrapper } from "./App.style";
 
 const useInput = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -15,7 +15,7 @@ const useInput = () => {
 };
 
 function App() {
-  const { users, isError, error } = useUsers();
+  const { users, isError, isLoading, error } = useUsers();
 
   const { inputValue: searchValue, handleInputChange } = useInput();
 
@@ -24,8 +24,20 @@ function App() {
     [searchValue, users]
   );
 
-  return (
-    <Wrapper>
+  const handleError = (content: JSX.Element) => {
+    if (isError) {
+      return <span>An error occured :(</span>;
+    }
+
+    if (isLoading) {
+      return <span>Loading...</span>;
+    }
+
+    return content;
+  };
+
+  return handleError(
+    <ContentWrapper>
       <h1>Users list</h1>
       <input
         type="test"
@@ -38,8 +50,14 @@ function App() {
       ) : (
         <Users users={filteredUsers} />
       )}
-    </Wrapper>
+    </ContentWrapper>
   );
 }
 
-export default App;
+const WrapperApp = () => (
+  <AppWrapper>
+    <App />
+  </AppWrapper>
+);
+
+export default WrapperApp;
