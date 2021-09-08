@@ -38,7 +38,7 @@ it("should load and display data correctly", async () => {
 it("should handle searchbar", async () => {
   render(<App />);
 
-  const input = screen.getByRole("textbox");
+  const input = await screen.findByRole("textbox");
 
   await screen.findByText("test name");
   await screen.findByText("surname fake");
