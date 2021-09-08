@@ -2,6 +2,7 @@ import React, { ChangeEvent, useMemo, useState } from "react";
 import { filterUsers } from "../utils";
 import { Users } from "../Users";
 import { useUsers } from "../hooks";
+import { Wrapper } from "./App.style";
 
 const useInput = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -24,7 +25,8 @@ function App() {
   );
 
   return (
-    <div className="App">
+    <Wrapper>
+      <h1>Users list</h1>
       <input
         type="test"
         value={searchValue}
@@ -36,7 +38,7 @@ function App() {
       ) : (
         <Users users={filteredUsers} />
       )}
-    </div>
+    </Wrapper>
   );
 }
 
